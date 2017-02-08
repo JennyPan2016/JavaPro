@@ -9,6 +9,8 @@ public class Yard extends Frame {
 	public static final int ROWS = 50; //常量字母大写
 	public static final int COLS = 50; 
 	public static final int BLOCK_SIZE = 10; 
+	Snake s = new Snake();
+	
 	
 	public void launch(){   //启动窗口
 		this.setLocation(300, 300);  //设置窗口出现的位置
@@ -39,7 +41,9 @@ public class Yard extends Frame {
 		}
 		
 		g.setColor(c);  //恢复画笔原始颜色
+		s.draw(g);;
 	}
 
+	private class PaintThread implements 
 
 }
