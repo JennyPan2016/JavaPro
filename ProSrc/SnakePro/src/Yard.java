@@ -44,6 +44,3 @@ public class Yard extends Frame {
 		s.draw(g);;
 	}
 
-	private class PaintThread implements 
-
-}
