@@ -1,5 +1,5 @@
 /*
- * 添加窗口关闭响应
+ * 添加TCP连接到Server端
  * */
 
 import java.awt.BorderLayout;
@@ -13,6 +13,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class ChatClient extends Frame {
 
@@ -39,27 +42,19 @@ public class ChatClient extends Frame {
 			}			
 		});
 		tfTxt.addActionListener(new TFListener());   //不要另外自己添加keyListener,直接使用TextField已经实现的方法addActionListener，实现ActionListener接口即可
-//		tfTxt.addKeyListener(new KeyAdapter() {   
-//
-//			@Override
-//			public void keyPressed(KeyEvent e) {
-//				System.out.println("Enter");
-//			}
-//
-//			@Override
-//			public void keyReleased(KeyEvent e) {
-//				tfTxt.setText("");
-//			}		
-//		});
-//		
-//		taContent.addKeyListener(new KeyAdapter() {
-//
-//			@Override
-//			public void keyReleased(KeyEvent e) {
-//				taContent.setText(tfTxt.getText());
-//			}		
-//		});		
 		setVisible(true);
+		connectToServer();  //启动窗口时立即连接到Server端
+	}
+
+	public void connectToServer(){  //连接到Server端
+		try {
+			Socket s = new Socket("127.0.0.1", 9989);
+			System.out.println("Connect Success!");
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private class TFListener implements ActionListener{   //为TextField添加监听

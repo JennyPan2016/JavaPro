@@ -1,5 +1,5 @@
 /*
- * 添加窗口关闭响应
+ * 向服务器发送一段话
  * */
 
 import java.awt.BorderLayout;
@@ -13,12 +13,18 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.DataOutput;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class ChatClient extends Frame {
 
 	// 作为成员变量，方便后面访问
 	TextField tfTxt = new TextField(); // 对话输入框
 	TextArea taContent = new TextArea(); // 显示框
+	DataOutputStream dos;
 
 	public static void main(String[] args) {
 		new ChatClient().launchFrame();
@@ -39,27 +45,26 @@ public class ChatClient extends Frame {
 			}			
 		});
 		tfTxt.addActionListener(new TFListener());   //不要另外自己添加keyListener,直接使用TextField已经实现的方法addActionListener，实现ActionListener接口即可
-//		tfTxt.addKeyListener(new KeyAdapter() {   
-//
-//			@Override
-//			public void keyPressed(KeyEvent e) {
-//				System.out.println("Enter");
-//			}
-//
-//			@Override
-//			public void keyReleased(KeyEvent e) {
-//				tfTxt.setText("");
-//			}		
-//		});
-//		
-//		taContent.addKeyListener(new KeyAdapter() {
-//
-//			@Override
-//			public void keyReleased(KeyEvent e) {
-//				taContent.setText(tfTxt.getText());
-//			}		
-//		});		
 		setVisible(true);
+		connectToServer();  //启动窗口时立即连接到Server端
+	}
+
+	public void connectToServer(){  //连接到Server端
+		try {
+			Socket s = new Socket("127.0.0.1", 9989);
+			System.out.println("Connect Success!");
+			dos = new DataOutputStream(s.getOutputStream());
+//			while(taContent.getText() != null){
+//				String str = tfTxt.getText();
+//				dos.writeUTF(str); 
+//				dos.flush();
+//			}
+			 
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private class TFListener implements ActionListener{   //为TextField添加监听
@@ -68,6 +73,13 @@ public class ChatClient extends Frame {
 			String str = tfTxt.getText().trim(); //trim用来去掉字符串两端的空格
 			taContent.setText(str);  //显示框显示,显示框不需要额外添加监听了。
 			tfTxt.setText("");  //输入框回车后会清空里面的内容
+//			try {
+//				dos.writeUTF(str);    //给Server端发送一句话
+//				dos.flush();
+//			} catch (IOException e1) {
+//				e1.printStackTrace();
+//			} 
+			
 		}
 		
 	}
