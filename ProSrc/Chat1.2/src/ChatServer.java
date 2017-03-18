@@ -94,10 +94,10 @@ public class ChatServer {
 					if (dis != null) dis.close(); // dis为null,说明dis还没有初始化，所以没有必要close
 					if (s != null) s.close();
 					if (dos != null) dos.close();
+					if (c != null) dis.close();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				if (c != null) dis.close();
 			}
 
 		}
