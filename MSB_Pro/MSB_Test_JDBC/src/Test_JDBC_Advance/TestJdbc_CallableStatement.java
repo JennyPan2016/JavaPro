@@ -1,5 +1,7 @@
 package Test_JDBC_Advance;
 
+// 对存储过程进行调用
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
