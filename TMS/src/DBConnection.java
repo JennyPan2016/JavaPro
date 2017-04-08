@@ -9,7 +9,7 @@ public class DBConnection {
 	private static Connection conn = null ;
 	
 	public Connection dbconn() {
-		String url = "jdbc:mysql://localhost:3306/book?useUnicode=true&characterEncoding=UTF-8";
+		String url = "jdbc:mysql://localhost:3306/tms?useUnicode=true&characterEncoding=UTF-8";
 		String user = "root";
 		String pwd = "";
 		
