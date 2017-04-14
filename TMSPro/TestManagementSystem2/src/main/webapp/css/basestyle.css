@@ -1,0 +1,23 @@
+.OperationTitle {
+    width:10%;
+    text-align:center;
+}
+.OperationStyle {
+    text-align:center;
+}
+
+.OperationModify{
+    text-decoration:underline;
+}
+
+#CreatePermissionModal{
+    height: 450px;
+    overflow: auto;
+}
+.m-b-15{
+    width: 100%;
+    float:inherit;
+}
+.modal-dialog {
+    width: 25%
+}

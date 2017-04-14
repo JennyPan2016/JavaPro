@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<include file="struts-default.xml" />
+	<package name="com.ctrip.web" extends="struts-default">
+		<action name="saveProjectInfo" class="com.ctrip.web.ProjectAction" method="saveProjectInfo"/>		
+		<action name="saveTaskInfo" class="com.ctrip.web.TaskAction" method="saveTaskInfo"/>
+		<action name="addDeliverList" class="com.ctrip.web.DeliverListAction" method="addDeliverList"></action>
+		<action name="modifyDeliverList" class="com.ctrip.web.DeliverListAction" method="modifyDeliverList"></action>		
+		<action name="getdeliverListByCenter" class="com.ctrip.web.DeliverListAction" method="getdeliverListByCenter"></action>
+		<action name="getdeliverListByGroup" class="com.ctrip.web.DeliverListAction" method="getdeliverListByGroup"></action>
+	</package>		
+</struts>    
