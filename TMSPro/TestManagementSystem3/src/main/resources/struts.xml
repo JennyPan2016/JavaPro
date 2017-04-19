@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<include file="struts-default.xml" />
+	<package name="com.ctrip.web" extends="struts-default">
+		<action name="saveProjectInfo" class="com.ctrip.web.ProjectAction" method="saveProjectInfo"/>		
+		
+		<action name="saveTaskInfo" class="com.ctrip.web.TaskAction" method="saveTaskInfo"/>
+		<action name="updateTaskInfo" class="com.ctrip.web.TaskAction" method="updateTaskInfo"/>
+		
+		<action name="saveCheckListInfo" class="com.ctrip.web.CheckListAction" method="saveCheckListInfo"/>
+		<action name="updateCheckListInfo" class="com.ctrip.web.CheckListAction" method="updateCheckListInfo"/>
+		
+		<action name="addDeliverList" class="com.ctrip.web.DeliverListAction" method="addDeliverList"></action>
+		<action name="modifyDeliverList" class="com.ctrip.web.DeliverListAction" method="modifyDeliverList"></action>	
+		<action name="deleteDeliverList" class="com.ctrip.web.DeliverListAction" method="deleteDeliverList"></action>	
+		<action name="getDeliverListsByCenter" class="com.ctrip.web.DeliverListAction" method="getDeliverListsByCenter"></action>
+		<action name="getDeliverListsByGroup" class="com.ctrip.web.DeliverListAction" method="getDeliverListsByGroup"></action>
+		<action name="getDeliverListById" class="com.ctrip.web.DeliverListAction" method="getDeliverListById"></action>
+		<action name="getDeliverListsByDate" class="com.ctrip.web.DeliverListAction" method="getDeliverListsByDate"></action>		
+	</package>		
+</struts>    

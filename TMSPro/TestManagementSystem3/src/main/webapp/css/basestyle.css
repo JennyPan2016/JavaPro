@@ -1,0 +1,26 @@
+.OperationTitle {
+    width:10%;
+    text-align:center;
+}
+.OperationStyle {
+    text-align:center;
+}
+
+.OperationModify{
+    text-decoration:underline;
+}
+
+#CreatePermissionModal{
+    height: 450px;
+    overflow: auto;
+}
+.modal-dialog {
+    width: 25%
+}
+.dropdown-menu{
+    background-color: #ebebeb;
+}
+.icon-calendar{
+    height: 21px;
+    width: 21px;
+}
