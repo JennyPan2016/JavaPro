@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<include file="struts-default.xml" />
+	<package name="com.ctrip.web" extends="struts-default">
+		<action name="saveProjectInfo" class="com.ctrip.web.ProjectAction" method="saveProjectInfo"/>		
+		
+		<action name="saveTaskInfo" class="com.ctrip.web.TaskAction" method="saveTaskInfo"/>
+		<action name="updateTaskInfo" class="com.ctrip.web.TaskAction" method="updateTaskInfo"/>
+		
+		<action name="saveCheckListInfo" class="com.ctrip.web.CheckListAction" method="saveCheckListInfo"/>
+		<action name="updateCheckListInfo" class="com.ctrip.web.CheckListAction" method="updateCheckListInfo"/>
+		<action name="queryCheckListInfo" class="com.ctrip.web.CheckListAction" method="queryCheckListInfo"/>
+		
+		<action name="saveDeliverTestContent" class="com.ctrip.web.DeliverTestContentAction" method="saveDeliverTestContent"/>
+		<action name="updateDeliverTestContent" class="com.ctrip.web.DeliverTestContentAction" method="updateDeliverTestContent"/>
+		<action name="queryDeliverTestContent" class="com.ctrip.web.DeliverTestContentAction" method="queryDeliverTestContent"/>
+		
+		<!-- 每日发布清单模块 -->
+		<action name="addDeliverList" class="com.ctrip.web.DeliverListAction" method="addDeliverList"></action>
+		<action name="modifyDeliverList" class="com.ctrip.web.DeliverListAction" method="modifyDeliverList"></action>	
+		<action name="deleteDeliverList" class="com.ctrip.web.DeliverListAction" method="deleteDeliverList"></action>	
+		<action name="getDeliverLists" class="com.ctrip.web.DeliverListAction" method="getDeliverLists"></action>
+		<!-- 基础查询 -->		
+		<action name="getAllDepartment" class="com.ctrip.web.BaseQueryAction" method="getAllDepartment"></action>
+		<action name="getAllCenter" class="com.ctrip.web.BaseQueryAction" method="getAllCenter"></action>
+		<action name="getAllGroup" class="com.ctrip.web.BaseQueryAction" method="getAllGroup"></action>
+		<action name="getAllProduct" class="com.ctrip.web.BaseQueryAction" method="getAllProduct"></action>
+		<action name="getAllProject" class="com.ctrip.web.BaseQueryAction" method="getAllProject"></action>
+		<action name="getAllTask" class="com.ctrip.web.BaseQueryAction" method="getAllTask"></action>
+		
+		
+	    <!--权限模块 --> 
+	    <!--用户身份--> 
+		<action name="UserTitleList" class="com.ctrip.web.UserTitleAction" method="UserTitleList"></action>
+		<!--用户角色--> 
+		<action name="UserRoleList" class="com.ctrip.web.UserRoleAction" method="UserRoleList"></action>
+		<!--增加用户--> 
+		<action name="adduser" class="com.ctrip.web.PP_UserAction" method="adduser"></action>
+		<!--修改用户--> 
+		<action name="updateuser" class="com.ctrip.web.PP_UserAction" method="updateuser"></action>
+		<!-- 发布回退模块 -->
+        <action name="addRollBackInfo" class="com.ctrip.web.RollBackInfoAction" method="addRollBackInfo"></action>
+        <action name="updateRollBackInfo" class="com.ctrip.web.RollBackInfoAction" method="updateRollBackInfo"></action>
+        <action name="getRollBackInfos" class="com.ctrip.web.RollBackInfoAction" method="getRollBackInfos"></action>
+        <action name="rollBackInfosToExcel" class="com.ctrip.web.RollBackInfoAction" method="rollBackInfosToExcel"></action>
+        <action name="getRollbackCategory" class="com.ctrip.web.RollBackInfoAction" method="getRollbackCategory"></action>
+        <action name="getRollbackGroupByBackCategory" class="com.ctrip.web.RollBackInfoAction" method="getRollbackGroupByBackCategory"></action>
+        
+	</package>		
+</struts>    
